@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static%}
+{% block content%}
+
+
+{% if status  == True %}
+    <h2>payment successful</h2>
+{% else %}
+    <h3>payment failed! </h3>
+{% endif %}
+{% endblock %}

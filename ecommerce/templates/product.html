@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<img src="{{cat.image.url}}"  class="rounded mx-auto d-block"  height="80%" >
+
+<div class="container mt-3">
+    <h3 class="text-center">{{cat.name}}</h3>
+    <p style="text-align:center;font-size:smaller">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+</div>
+
+
+<div class="row">
+    {% for i in pro %}
+                <div class="col-lg-6 col-md-3 col-sm-6">
+                    <div class="blog__item">
+                        <div class="blog__item__text">
+                                <h4>{{i.name}}</h4>
+                            <img  src="{{i.image.url}}" height="250px" width="50%">
+<!--                            <h5 class="mt-4 text-center">{{i.description}}</h5>-->
+                            <h5>{{i.price}}</h5>
+                            <a href="{% url 'shop:details' i.id %}">Detail</a>
+                        </div>
+                        </div>
+                    </div>
+    {% endfor %}
+</div>
+
+<!--<h2 class="text-center mt-3">{{cat.name}}</h2>-->
+<!--<h3 class="mt-4 text-center">{{cat.description}}</h3>-->
+
+<!--<div class="row">-->
+<!--    {% for i in pro %}-->
+<!--                <div class="col-lg-4 col-md-6 col-sm-3 mx-auto" style="width: 200px;">-->
+<!--                    <div class="blog__item">-->
+<!--                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg"></div>-->
+<!--                        <div class="blog__item__text">-->
+<!--                                <h4>{{i.name}}</h4>-->
+<!--                            <img class="img-fluid" src="{{i.image.url}}" height="150px" width="90%">-->
+<!--                            <h5>{{i.price}}</h5>-->
+
+<!--                            <a href="{% url 'shop:details' i.id %}">Details</a>-->
+<!--                        </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--    {% endfor %}-->
+<!--</div>-->
+
+
+{% endblock %}

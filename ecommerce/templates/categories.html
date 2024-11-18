@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero">
+        <div class="hero__slider owl-carousel">
+            <div class="hero__items set-bg" data-setbg="{% static 'img/hero/hero-1.jpg.jpg' %}">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-5 col-lg-7 col-md-8">
+                            <div class="hero__text">
+                                <h6>Summer Collection</h6>
+                                <h2>Fall - Winter Collections 2030</h2>
+                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
+                                commitment to exceptional quality.</p>
+                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
+                                <div class="hero__social">
+                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="#"><i class="fa fa-pinterest"></i></a>
+                                    <a href="#"><i class="fa fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+
+<div class="container mt-3">
+    <h3 class="text-center">Our Collections </h3>
+    <p style="text-align:center;font-size:smaller">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+</div>
+
+<div class="row">
+    {% for i in cat %}
+               <div class="col-lg-4 col-md-4">
+                    <div class="blog__item">
+                        <div class="blog__item__text">
+                                <h4>{{i.name}}</h4>
+                            <img src="{{i.image.url}}" height="270px" width="100%">
+                            <h5 class="mt-4 text-center">{{i.description}}</h5>
+                            <a href="{% url 'shop:products' i.id %}">Products</a>
+                        </div>
+                        </div>
+                    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
